@@ -22,7 +22,7 @@ def tours(id):
 @app.route('/data/')
 def data():
     return render_template('tour.html')
-
+poetr
 
 if __name__ == '__main__':
     app.run()
