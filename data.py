@@ -1,4 +1,4 @@
-title = "Stepik Travel"
+title = "Flask Travel"
 subtitle = "Для тех, кого отвлекают дома"
 description = """Лучшие направления, где никто не будет вам мешать сидеть на берегу и изучать программирование, 
 дизайн, разработку игр и управление продуктами """
@@ -193,7 +193,7 @@ tours = {
         "picture": "https://images.unsplash.com/photo-1553653924-39b70295f8da?ixlib=rb-1.2.1&auto=format&fit=crop&w"
                    "=800&q=60",
         "price": 49000,
-        "stars": tour"3",
+        "stars": "3",
         "country": "Куба",
         "nights": 8,
         "date": "26 января"
