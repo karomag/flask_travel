@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, abort, render_template
 from data import tours, title, subtitle, departures, description
 
 app = Flask(__name__)
@@ -18,6 +18,8 @@ def index():
 
 @app.route('/departure/<string:departure_from>')
 def departure(departure_from=None):
+    if departure_from not in departures.keys():
+        abort(404)
     return render_template(
         'departure.html',
         departures=departures,
@@ -30,6 +32,8 @@ def departure(departure_from=None):
 
 @app.route('/tour/<int:tour_id>')
 def tour(tour_id):
+    if tour_id not in tours.keys():
+        abort(404)
     return render_template(
         'tour.html',
         departures=departures,
