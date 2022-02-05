@@ -1,3 +1,5 @@
+import random
+
 from flask import Flask, abort, render_template
 from data import tours, title, subtitle, departures, description
 
@@ -6,12 +8,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    random_keys = random.sample(list(tours.keys()), k=6)
     return render_template(
         'index.html',
         departures=departures,
         description=description,
         title=title,
-        tours={key: val for key, val in tours.items() if key < 7},
+        # tours={key: val for key, val in tours.items() if key < 7},
+        tours={key: tours.get(key) for key in random_keys},
         subtitle=subtitle,
         )
 
